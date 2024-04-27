@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 // Define the schema for the test response
 const ResponseSchema = new mongoose.Schema({
+  userId: {
+    type: String,
+    required: true
+  },
     question:{
         type: String,
         required: true
@@ -10,9 +14,18 @@ const ResponseSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  response: {
-    type: String,
+  // response: {
+  //   type: String,
+  //   required: true
+  // },
+  responses: {
+    type: Object,
     required: true
+  },
+  // You can add more fields as needed
+  createdAt: {
+    type: Date,
+    default: Date.now
   }
 });
 
@@ -20,3 +33,6 @@ const ResponseSchema = new mongoose.Schema({
 const ResponseModel = mongoose.model('Response', ResponseSchema);
 
 module.exports = ResponseModel;
+
+
+

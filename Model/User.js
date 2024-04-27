@@ -1,24 +1,8 @@
 const mongoose = require("mongoose")
 
 const ApplicantSchema = new mongoose.Schema({
-    firstName:{
+    fullName:{
         type: String
-    },
-    lastName:{
-        type: String
-    },
-    age:{
-        type:Date, 
-        
-    },
-    gender:{
-        type: String
-    }, 
-    education:{
-        type: String
-    },
-    location:{
-        type:String
     },
     email:{
         type: String,
@@ -28,7 +12,27 @@ const ApplicantSchema = new mongoose.Schema({
     password:{
         type: String,
         required: true
+    },
+    age:{
+        type:String, 
+        
+    },
+    gender:{
+        type: String
+    }, 
+    education:{
+        type: String
+    },
+    ocupation:{
+        type:String
+    },
+    career:{
+      type: String
+    },
+    factor:{
+        type: String
     }
+    
 },
 // {
 //     collection: "Applicants"

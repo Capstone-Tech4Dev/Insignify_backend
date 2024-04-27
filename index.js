@@ -17,7 +17,7 @@ const connect = require("./config/database");
 
 
 
-app.use("/question", questionRouter);
+app.use("/", questionRouter);
 app.use("/", userRouter);
 
 const PORT = process.env.PORT || 5000;
