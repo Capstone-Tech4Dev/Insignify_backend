@@ -106,6 +106,17 @@ async function login(req, res){
     };
 };
 
+async function getAllUsers(req, res) {
+    try {
+        const Users = await User.find();
+        res.json(Users);
+    } catch (error) {
+        res.status(500).json({
+            message: error.message
+        });
+    }
+}
+
 module.exports={
     signup,
     login

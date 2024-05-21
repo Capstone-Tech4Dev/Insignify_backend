@@ -4,6 +4,7 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const questionRouter = require("./Router/questionRouter");
 const userRouter = require("./Router/userRoute");
+const contactRouter = require("./Router/ContactRouter")
 const psychometricQuestions = require('./Questions.json');
 
 const app = express();
@@ -15,10 +16,9 @@ app.use(cors());
 const connect = require("./config/database");
 
 
-
-
 app.use("/", questionRouter);
 app.use("/", userRouter);
+app.use("/", contactRouter);
 
 const PORT = process.env.PORT || 5000;
 
